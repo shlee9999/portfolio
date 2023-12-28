@@ -3,10 +3,10 @@ import bannerImg from 'assets/banner.jpg';
 import { motion, Variants } from 'framer-motion';
 import { Link } from 'react-scroll';
 const Root = styled.div`
-  height: 70vh;
+  height: 100vh;
   padding: 30px 0 30px 0;
   width: 100%;
-  height: 500px;
+
   background-image: url(${bannerImg});
   background-size: cover;
   background-attachment: fixed;
