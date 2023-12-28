@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Root from './Root';
-import { createGlobalStyle } from 'styled-components';
+import App from './App';
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { theme } from './theme';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -61,9 +63,12 @@ table {
 }
 
 `;
+
 root.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <Root />
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
