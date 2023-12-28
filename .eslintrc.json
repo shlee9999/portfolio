@@ -5,5 +5,8 @@
   "extends": ["plugin:prettier/recommended"],
   "env": {
     "browser": true
+  },
+  "rules": {
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]
   }
 }
