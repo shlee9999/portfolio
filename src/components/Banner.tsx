@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import bannerImg from 'assets/banner.jpg';
 import { motion, Variants } from 'framer-motion';
-const Root = styled(motion.div)`
+import { Link } from 'react-scroll';
+const Root = styled.div`
   height: 70vh;
-  background-color: tomato;
   padding: 30px 0 30px 0;
   width: 100%;
   height: 500px;
-  background-color: tomato;
   background-image: url(${bannerImg});
   background-size: cover;
   background-attachment: fixed;
@@ -35,19 +34,7 @@ const Button = styled(motion.button)`
   font-weight: 800;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.6);
 `;
-const RootVariant: Variants = {
-  start: {
-    opacity: 0,
-    y: 20,
-  },
-  end: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-    },
-  },
-};
+
 const BtnVariant: Variants = {
   hover: {
     y: -5,
@@ -58,10 +45,12 @@ const BtnVariant: Variants = {
 };
 export const Banner = () => {
   return (
-    <Root variants={RootVariant} initial="start" animate="end">
+    <Root>
       <Title>SeongHoon's PortFolio</Title>
       <Button variants={BtnVariant} whileTap="click" whileHover="hover">
-        About Me!
+        <Link to="AboutMe" smooth duration={750}>
+          About Me!
+        </Link>
       </Button>
     </Root>
   );
