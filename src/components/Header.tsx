@@ -10,7 +10,7 @@ const Root = styled.header`
   background-color: rgba(0, 0, 0, 0.6);
   width: 50%;
   color: ${props => props.theme.bgColor};
-  border-radius: 2px 2px 30px 30px;
+  border-radius: 2px 2px 15px 15px;
   z-index: 10;
 `;
 const Items = styled.ul`
