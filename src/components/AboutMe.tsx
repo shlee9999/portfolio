@@ -2,21 +2,24 @@ import styled from 'styled-components';
 import { Header } from './Header';
 import { techList } from 'constants/techList';
 import { Title } from './Title';
+import { HEADER_HEIGHT } from 'constants/layout';
 
 const Root = styled.div`
-  /* background-color: tomato; */
+  height: 100vh;
+  padding-bottom: 30px;
 `;
 const Wrapper = styled.div`
-  height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 30px;
-  padding: 30px 20%;
+  padding: 10px 20% 10px 20%;
+  height: calc(100vh - ${HEADER_HEIGHT}px);
 `;
 
 const ItemContainer = styled.div`
+  flex-grow: 1;
   display: flex;
   justify-content: center;
 `;
@@ -33,7 +36,6 @@ const Item = styled.li`
   justify-content: center;
   align-items: center;
   background-color: aliceblue;
-  height: 150px;
   flex-basis: 150px;
   flex-grow: 1;
 `;
