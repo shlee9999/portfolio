@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Header } from './Header';
 import { techList } from 'constants/techList';
+import { Title } from './Title';
 
 const Root = styled.div`
   /* background-color: tomato; */
@@ -15,13 +16,6 @@ const Wrapper = styled.div`
   padding: 30px 20%;
 `;
 
-const Title = styled.p`
-  text-align: center;
-  font-size: 30px;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-decoration: underline;
-`;
 const ItemContainer = styled.div`
   display: flex;
   justify-content: center;

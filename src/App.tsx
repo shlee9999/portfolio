@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Banner } from './components/Banner';
 import { Variants, motion } from 'framer-motion';
 import { AboutMe } from 'components/AboutMe';
+import { Projects } from 'components/Projects';
 
 const Root = styled(motion.div)``;
 const RootVariant: Variants = {
@@ -23,6 +24,7 @@ function App() {
     <Root variants={RootVariant} initial="start" animate="end">
       <Banner />
       <AboutMe />
+      <Projects />
     </Root>
   );
 }
