@@ -39,9 +39,9 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 hr{
-	/* margin: 0;
-	padding: 0; */
-	/* border: none; */
+	margin: 0;
+	padding: 0; 
+	border: 0;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -50,7 +50,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	height: 200vh;
 }
 ol, ul {
 	list-style: none;

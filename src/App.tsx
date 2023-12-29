@@ -5,7 +5,8 @@ import { Variants, motion } from 'framer-motion';
 import { AboutMe } from 'components/AboutMe';
 import { Projects } from 'components/Projects';
 
-const Root = styled(motion.div)``;
+const Root = styled(motion.div)`\
+`;
 const RootVariant: Variants = {
   start: {
     opacity: 0,
