@@ -27,4 +27,8 @@ export const techList: ITechList[] = [
     tech: 'Python',
     percentage: 70,
   },
+  {
+    tech: 'Java',
+    percentage: 60,
+  },
 ];

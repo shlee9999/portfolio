@@ -5,7 +5,7 @@ import { Variants, motion } from 'framer-motion';
 
 const Root = styled(motion.div)`
   min-height: 100vh;
-  background-color: teal;
+  background-color: #00a1a7;
   padding: 30px 20% 30px 20%;
   display: flex;
   flex-direction: column;

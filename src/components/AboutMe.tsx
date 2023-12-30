@@ -69,7 +69,7 @@ const ProfileDescription = styled.p`
 `;
 const TechStackContainer = styled(motion.div)`
   padding: 20px 30px;
-  background-color: tomato;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
