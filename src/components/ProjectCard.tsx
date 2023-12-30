@@ -101,6 +101,9 @@ const TriggeredRootVar: Variants = {
   },
   end: {
     opacity: 1,
+    transition: {
+      duration: 0.4,
+    },
   },
 };
 const ContainerVar: Variants = {
