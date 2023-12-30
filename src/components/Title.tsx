@@ -8,19 +8,20 @@ const Root = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
+  color: ${props => props.color};
 `;
 const Typo = styled(motion.span)`
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 900;
   text-transform: uppercase;
 `;
 const Line = styled(motion.hr)`
   margin: 0 auto;
   width: 50px;
-  height: 3.5px;
-  background-color: black;
+  height: 4px;
+  background-color: ${props => props.color};
 `;
 const RootVar: Variants = {
   start: {
@@ -61,9 +62,10 @@ const LineVar: Variants = {
 };
 interface TitleProps {
   children: ReactNode;
+  textColor?: string;
 }
 
-export const Title = ({ children }: TitleProps) => {
+export const Title = ({ children, textColor }: TitleProps) => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
@@ -72,9 +74,10 @@ export const Title = ({ children }: TitleProps) => {
       initial="start"
       animate={isVisible ? 'end' : ''}
       ref={ref}
+      color={textColor ?? ''}
     >
       <Typo variants={TypoVar}>{children}</Typo>
-      <Line variants={LineVar} />
+      <Line variants={LineVar} color={textColor ?? 'black'} />
     </Root>
   );
 };

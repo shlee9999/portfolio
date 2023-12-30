@@ -5,9 +5,11 @@ import { Variants, motion } from 'framer-motion';
 import { AboutMe } from 'components/AboutMe';
 import { Projects } from 'components/Projects';
 import { Header } from 'components/Header';
+import { Contact } from 'components/Contact';
 
 const Root = styled(motion.div)`
   position: relative;
+  overflow-x: hidden;
 `;
 const RootVariant: Variants = {
   start: {
@@ -29,6 +31,7 @@ function App() {
       <Banner />
       <AboutMe />
       <Projects />
+      <Contact />
     </Root>
   );
 }
