@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Header } from './Header';
 import { techList } from 'constants/techList';
 import { TechItem } from './TechItem';
 import { Variants, motion } from 'framer-motion';
@@ -18,7 +17,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 30px;
-  padding: 10px 10% 10px 10%;
+  padding: 30px 10% 30px 10%;
 `;
 
 const ItemContainer = styled.div`
@@ -39,7 +38,6 @@ const ProfileContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 `;
 const Profile = styled.div`
-  height: 250px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -49,17 +47,21 @@ const Profile = styled.div`
 `;
 const ProfileImg = styled.div`
   background-color: tomato;
-  height: 80%;
-  width: 40%;
+  height: 220px;
+  width: 220px;
 `; // background-image 사용
 const ProfileTitle = styled.p`
   text-align: center;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 23px;
+  font-weight: 600;
 `;
 const ProfileDescription = styled.p`
   text-align: center;
-  font-size: 12px;
+  padding: 0 20px;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  font-weight: 300;
+  line-height: 20px;
 `;
 const TechStackContainer = styled(motion.div)`
   padding: 20px 30px;

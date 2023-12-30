@@ -8,15 +8,16 @@ const Root = styled.div`
   background-color: #eeeeee;
 `;
 const Tech = styled.span`
-  width: 80px;
+  width: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #04c2c9;
   color: white;
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 1px;
+
+  font-weight: 700;
 `;
 interface PercentageProps {
   percentage: number;
@@ -33,7 +34,7 @@ const PercentageBar = styled(motion.div)<PercentageProps>`
 `;
 const PercentageTypo = styled.p`
   color: gray;
-  font-size: 10px;
+  font-size: 15px;
   margin-right: 8px;
   line-height: ${TECH_ITEM_HEIGHT}px;
 `;

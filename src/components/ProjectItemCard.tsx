@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 const Root = styled(motion.div)`
-  height: 150px;
+  height: 300px;
   background-color: white;
   border-radius: 10px;
   background-image: url(https://source.unsplash.com/random);
@@ -19,12 +19,12 @@ const TriggeredRoot = styled(motion.div)`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 10% 0;
+  padding: 70px 0;
 `;
 const OddRootVar: Variants = {
   start: {
     opacity: 0,
-    x: -7,
+    x: -10,
   },
   end: {
     opacity: 1,
@@ -37,7 +37,7 @@ const OddRootVar: Variants = {
 const EvenRootVar: Variants = {
   start: {
     opacity: 0,
-    x: 7,
+    x: 10,
   },
   end: {
     opacity: 1,
@@ -54,12 +54,12 @@ const Container = styled(motion.div)`
 `;
 
 const Title = styled.p`
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 800;
 `;
 const Button = styled(motion.p)`
-  width: 80%;
-  height: 30px;
+  width: 60%;
+  height: 50px;
   border: 1px solid #e31b6d;
   display: flex;
   justify-content: center;
@@ -72,9 +72,12 @@ const Button = styled(motion.p)`
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
   text-transform: uppercase;
+  font-size: 25px;
 `;
 const TechStack = styled.p`
   color: #e31b6d;
+  text-align: center;
+  font-size: 20px;
 `;
 const TriggeredRootVar: Variants = {
   start: {

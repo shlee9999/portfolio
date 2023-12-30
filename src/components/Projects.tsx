@@ -5,14 +5,14 @@ import { Variants, motion } from 'framer-motion';
 
 const Root = styled(motion.div)`
   background-color: #00a1a7;
-  padding: 30px 20% 30px 20%;
+  padding: 50px 20% 50px 20%;
   display: flex;
   flex-direction: column;
   gap: 30px;
 `;
 const Cards = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
 `;
 const RootVar: Variants = {

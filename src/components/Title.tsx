@@ -12,7 +12,7 @@ const Root = styled(motion.div)`
 `;
 const Typo = styled(motion.span)`
   text-align: center;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 900;
   text-transform: uppercase;
 `;
