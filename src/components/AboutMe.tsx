@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Header } from './Header';
 import { techList } from 'constants/techList';
-import { HEADER_HEIGHT } from 'constants/layout';
 import { TechItem } from './TechItem';
 import { Variants, motion } from 'framer-motion';
 import { useScrollAnimation } from 'hooks/useScrollAnimation';
@@ -21,17 +20,13 @@ const Wrapper = styled.div`
 `;
 
 const ItemContainer = styled.div`
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
   gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 `;
-const Items = styled.ul`
+const Items = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
   gap: 10px;
 `;
 // AboutItem 컴포넌트 만들기
@@ -40,7 +35,7 @@ const Item = styled.li`
   justify-content: center;
   align-items: center;
   background-color: aliceblue;
-  flex-basis: 150px;
+  flex-basis: 100px;
   flex-grow: 1;
   min-height: 100px;
 `;
@@ -51,7 +46,6 @@ const ProfileContainer = styled.div`
 `;
 const Profile = styled.div`
   height: 250px;
-
   display: flex;
   flex-direction: column;
   gap: 10px;
