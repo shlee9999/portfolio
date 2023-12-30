@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 30px;
-  padding: 30px 10% 30px 10%;
+  padding: 70px 10% 30px 10%;
 `;
 
 const ItemContainer = styled.div`
@@ -30,8 +30,6 @@ const Items = styled.div`
   flex-wrap: wrap;
   gap: 10px;
 `;
-// AboutItem 컴포넌트 만들기
-const Item = styled.li``;
 
 const ProfileContainer = styled.div`
   display: grid;
@@ -89,7 +87,7 @@ export const AboutMe = () => {
     },
   };
   return (
-    <Root id="AboutMe">
+    <Root id="About">
       <Wrapper>
         <Title>About</Title>
         <ItemContainer>

@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 */
 *{
   box-sizing: border-box;
-  font-family: 'Noto Sans KR', sans-serif !important;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

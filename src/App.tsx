@@ -25,8 +25,8 @@ const RootVariant: Variants = {
 function App() {
   return (
     <Root variants={RootVariant} initial="start" animate="end">
-      <Banner />
       <Header />
+      <Banner />
       <AboutMe />
       <Projects />
     </Root>

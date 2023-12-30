@@ -7,22 +7,28 @@ const Root = styled.header`
   @media (max-width: 768px) {
     display: none;
   }
-  padding-top: 10px 0 5px 0;
-  position: sticky;
-  top: 0px;
-  left: 40%;
-  height: ${HEADER_HEIGHT}px;
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 50%;
-  color: ${props => props.theme.bgColor};
-  border-radius: 2px 2px 15px 15px;
+  position: fixed;
+  display: flex;
+  top: 0;
   z-index: 10;
+  height: ${HEADER_HEIGHT}px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* border-radius: 2px 2px 15px 15px; */
+  color: ${props => props.theme.bgColor};
+`;
+const NavBar = styled.nav`
+  position: absolute;
+  height: 100%;
+  width: 40%;
+  right: 10%;
+  /* background-color: red; */
 `;
 const Items = styled.ul`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   text-align: center;
 `;
 
@@ -33,25 +39,33 @@ const CommonLinkProps: Omit<ReactScrollLinkProps, 'to'> = {
   activeStyle: { opacity: 1 },
 };
 
-const LinkIdList = ['Banner', 'AboutMe', 'Projects', 'Fourth', 'Fifth'];
+const LinkIdList = ['About', 'Projects', 'Fourth', 'Fifth'];
 const StyledLink = styled(Link)`
+  font-size: 18px;
   place-self: center;
   opacity: 0.6;
   cursor: pointer;
   &:hover {
     opacity: 1;
   }
+  font-weight: ${props => (props.to === 'Banner' ? 'bold' : 'normal')};
+  margin-left: ${props => (props.to === 'Banner' ? '10%' : '0')};
 `;
 export const Header = () => {
   return (
     <Root>
-      <Items>
-        {LinkIdList.map((id: string) => (
-          <StyledLink to={id} {...CommonLinkProps}>
-            {id}
-          </StyledLink>
-        ))}
-      </Items>
+      <StyledLink to="Banner" {...CommonLinkProps}>
+        LSH's PortFolio
+      </StyledLink>
+      <NavBar>
+        <Items>
+          {LinkIdList.map((id: string) => (
+            <StyledLink to={id} {...CommonLinkProps}>
+              {id}
+            </StyledLink>
+          ))}
+        </Items>
+      </NavBar>
     </Root>
   );
 };
