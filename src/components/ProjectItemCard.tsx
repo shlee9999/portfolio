@@ -1,15 +1,24 @@
+import { IProject } from 'constants/projectList';
 import { Variants, motion } from 'framer-motion';
 import { useScrollAnimation } from 'hooks/useScrollAnimation';
 import { useState } from 'react';
 import styled from 'styled-components';
 
-const Root = styled(motion.div)`
+interface RootProps {
+  imgUrl: string;
+}
+const Root = styled(motion.div)<RootProps>`
   height: 300px;
   background-color: white;
   border-radius: 10px;
-  background-image: url(https://source.unsplash.com/random);
+  background-image: url(${props => props.imgUrl});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   cursor: pointer;
   overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 5px;
 `;
 const TriggeredRoot = styled(motion.div)`
   width: 100%;
@@ -50,7 +59,7 @@ const EvenRootVar: Variants = {
 const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 12px;
 `;
 
 const Title = styled.p`
@@ -74,10 +83,16 @@ const Button = styled(motion.p)`
   text-transform: uppercase;
   font-size: 25px;
 `;
-const TechStack = styled.p`
+const TechStack = styled.span`
   color: #e31b6d;
   text-align: center;
   font-size: 20px;
+  &:not(:last-child)::after {
+    content: '/';
+  }
+`;
+const TechStacks = styled.div`
+  text-align: center;
 `;
 const TriggeredRootVar: Variants = {
   start: {
@@ -99,16 +114,22 @@ const ButtonVar: Variants = {
   },
   end: { y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
-interface ProjectItemCardProps {
+interface ProjectItemCardProps extends IProject {
   isEven?: boolean;
 }
 
-export const ProjectItemCard = ({ isEven }: ProjectItemCardProps) => {
+export const ProjectItemCard = ({
+  isEven,
+  imgUrl,
+  title,
+  techStacks,
+}: ProjectItemCardProps) => {
   const { ref, isVisible } = useScrollAnimation();
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Root
+      imgUrl={imgUrl}
       ref={ref}
       variants={isEven ? EvenRootVar : OddRootVar}
       initial="start"
@@ -123,8 +144,12 @@ export const ProjectItemCard = ({ isEven }: ProjectItemCardProps) => {
         animate={isHovered ? 'end' : 'start'}
       >
         <Container variants={ContainerVar}>
-          <Title>Hello!</Title>
-          <TechStack>ReactJS</TechStack>
+          <Title>{title}</Title>
+          <TechStacks>
+            {techStacks.map(techStack => (
+              <TechStack>{techStack}</TechStack>
+            ))}
+          </TechStacks>
         </Container>
         <Button variants={ButtonVar}>Learn More</Button>
       </TriggeredRoot>
