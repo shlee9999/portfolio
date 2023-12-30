@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { Header } from './Header';
 import { techList } from 'constants/techList';
-import { Title } from './Title';
 import { HEADER_HEIGHT } from 'constants/layout';
 import { TechItem } from './TechItem';
 import { Variants, motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useScrollAnimation } from 'hooks/useScrollAnimation';
+import { Title } from './Title';
 
 const Root = styled.div`
   height: 100vh;
@@ -94,24 +94,7 @@ const TechStackContainerVar: Variants = {
   },
 };
 export const AboutMe = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
-  const onScroll = (entries: any) => {
-    const [entry] = entries;
-    setIsVisible(entry.isIntersecting);
-  };
-  console.log('About me', isVisible);
-  useEffect(() => {
-    const observer = new IntersectionObserver(onScroll, { threshold: 0.5 });
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, [ref]);
+  const { ref, isVisible } = useScrollAnimation();
   return (
     <Root>
       <Header />

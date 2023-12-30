@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Title } from './Title';
 import { ProjectItemCard } from './ProjectItemCard';
+import { Title } from './Title';
 
 const Root = styled.div`
   height: 100vh;

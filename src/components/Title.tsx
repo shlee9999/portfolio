@@ -1,4 +1,5 @@
 import { Variants, motion } from 'framer-motion';
+import { useScrollAnimation } from 'hooks/useScrollAnimation';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
@@ -21,73 +22,57 @@ const Line = styled(motion.hr)`
   height: 3.5px;
   background-color: black;
 `;
-
+const RootVar: Variants = {
+  start: {
+    opacity: 0,
+  },
+  end: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+const TypoVar: Variants = {
+  start: {
+    x: -100,
+    opacity: 0,
+  },
+  end: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1.1,
+    },
+  },
+};
+const LineVar: Variants = {
+  start: {
+    x: 100,
+    opacity: 0,
+  },
+  end: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1.1,
+    },
+  },
+};
 interface TitleProps {
   children: ReactNode;
 }
 
 export const Title = ({ children }: TitleProps) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
+  const { ref, isVisible } = useScrollAnimation();
 
-  const onScroll = (entries: any) => {
-    const [entry] = entries;
-    setIsVisible(entry.isIntersecting);
-  };
-  const RootVar: Variants = {
-    start: {
-      opacity: 0,
-    },
-    end: {
-      opacity: isVisible ? 1 : 0,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
-  const TypoVar: Variants = {
-    start: {
-      x: -100,
-      opacity: 0,
-    },
-    end: {
-      x: isVisible ? 0 : -100,
-      opacity: isVisible ? 1 : 0,
-      transition: {
-        duration: 1.1,
-      },
-    },
-  };
-  const LineVar: Variants = {
-    start: {
-      x: 100,
-      opacity: 0,
-    },
-    end: {
-      x: isVisible ? 0 : 100,
-      opacity: isVisible ? 1 : 0,
-      transition: {
-        duration: 1.1,
-      },
-    },
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(onScroll, { threshold: 0.1 });
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, [ref]);
-  useEffect(() => {
-    console.log(isVisible);
-  }, [isVisible]);
   return (
-    <Root variants={RootVar} initial="start" animate="end" ref={ref}>
+    <Root
+      variants={RootVar}
+      initial="start"
+      animate={isVisible ? 'end' : ''}
+      ref={ref}
+    >
       <Typo variants={TypoVar}>{children}</Typo>
       <Line variants={LineVar} />
     </Root>
