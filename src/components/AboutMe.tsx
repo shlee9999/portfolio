@@ -78,23 +78,24 @@ const TechStackContainer = styled(motion.div)`
   flex-direction: column;
   justify-content: space-between;
 `;
-const TechStackContainerVar: Variants = {
-  start: {
-    opacity: 0,
-    x: 200,
-  },
-  end: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1.3,
-      delayChildren: 0.5,
-      staggerChildren: 0.1,
-    },
-  },
-};
+
 export const AboutMe = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const TechStackContainerVar: Variants = {
+    start: {
+      opacity: 0,
+      x: 200,
+    },
+    end: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1.3,
+        delayChildren: 0.5,
+        staggerChildren: isVisible ? 0.1 : undefined,
+      },
+    },
+  };
   return (
     <Root>
       <Header />
