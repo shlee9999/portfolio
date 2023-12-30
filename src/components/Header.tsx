@@ -39,7 +39,7 @@ const CommonLinkProps: Omit<ReactScrollLinkProps, 'to'> = {
   activeStyle: { opacity: 1 },
 };
 
-const LinkIdList = ['About', 'Projects', 'Fourth', 'Fifth'];
+const LinkIdList = ['About', 'Projects', 'Contact', 'Fifth'];
 const StyledLink = styled(Link)`
   font-size: 18px;
   place-self: center;

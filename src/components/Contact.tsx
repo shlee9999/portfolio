@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Title } from './Title';
 import { useForm } from 'react-hook-form';
+import { Variants, motion } from 'framer-motion';
+import { useScrollAnimation } from 'hooks/useScrollAnimation';
 
 const Root = styled.div`
   height: 80vh;
@@ -10,12 +12,12 @@ const Root = styled.div`
   flex-direction: column;
   gap: 60px;
 `;
-const HeaderTypo = styled.p`
+const HeaderTypo = styled(motion.p)`
   font-size: 20px;
   color: #04c2c9;
   text-align: center;
 `;
-const Form = styled.form`
+const Form = styled(motion.form)`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -64,6 +66,30 @@ const SubmitButton = styled.button`
 const ErrorMessage = styled.p`
   color: white;
 `;
+const FormVar: Variants = {
+  start: {
+    scale: 0,
+  },
+  end: {
+    scale: 1,
+    transition: {
+      type: 'spring',
+      bounce: 0.5,
+      duration: 1.3,
+    },
+  },
+};
+const HeaderTypoVar: Variants = {
+  start: {
+    x: 100,
+  },
+  end: {
+    x: 0,
+    transition: {
+      duration: 1.3,
+    },
+  },
+};
 interface IForm {
   name: string;
   email: string;
@@ -82,12 +108,23 @@ export const Contact = () => {
     setValue('email', '');
     setValue('message', '');
   };
-  console.log(errors);
+
+  const { ref, isVisible } = useScrollAnimation();
   return (
-    <Root onSubmit={handleSubmit(onValid)}>
+    <Root onSubmit={handleSubmit(onValid)} id="Contact">
       <Title textColor="white">Contact</Title>
-      <HeaderTypo>Have a question or want to work together?</HeaderTypo>
-      <Form>
+      <HeaderTypo
+        ref={ref}
+        variants={HeaderTypoVar}
+        animate={isVisible ? 'end' : 'start'}
+      >
+        Have a question or want to work together?
+      </HeaderTypo>
+      <Form
+        variants={FormVar}
+        initial="start"
+        animate={isVisible ? 'end' : 'start'}
+      >
         <NameInput
           {...register('name', { required: 'ㄴ Please write your name!' })}
           placeholder="Name"
