@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 30px;
-  padding: 10px 20% 10px 20%;
+  padding: 10px 10% 10px 10%;
 `;
 
 const ItemContainer = styled.div`
@@ -42,7 +42,7 @@ const Item = styled.li`
 
 const ProfileContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 `;
 const Profile = styled.div`
   height: 250px;
@@ -69,7 +69,7 @@ const ProfileDescription = styled.p`
 `;
 const TechStackContainer = styled(motion.div)`
   padding: 20px 30px;
-
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -123,7 +123,6 @@ export const AboutMe = () => {
             initial="start"
             animate={isVisible ? 'end' : 'start'}
           >
-            {/* 애니메이션 넣어보기 */}
             {techList.map(techInfo => (
               <TechItem {...techInfo} />
             ))}

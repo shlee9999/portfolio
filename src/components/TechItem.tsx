@@ -8,7 +8,7 @@ const Root = styled.div`
   background-color: #eeeeee;
 `;
 const Tech = styled.span`
-  width: 60px;
+  width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;

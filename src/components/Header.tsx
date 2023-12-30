@@ -5,8 +5,8 @@ import { ReactScrollLinkProps } from 'react-scroll/modules/components/Link';
 
 const Root = styled.header`
   padding-top: 10px 0 5px 0;
-  position: fixed;
-  top: 0;
+  position: sticky;
+  top: 0px;
   left: 40%;
   height: ${HEADER_HEIGHT}px;
   background-color: rgba(0, 0, 0, 0.6);
