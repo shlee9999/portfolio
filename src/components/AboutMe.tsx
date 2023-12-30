@@ -8,7 +8,7 @@ import { useScrollAnimation } from 'hooks/useScrollAnimation';
 import { Title } from './Title';
 
 const Root = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   padding-bottom: 30px;
 `;
 const Wrapper = styled.div`
@@ -18,20 +18,21 @@ const Wrapper = styled.div`
   justify-content: space-between;
   gap: 30px;
   padding: 10px 20% 10px 20%;
-  height: calc(100vh - ${HEADER_HEIGHT}px);
 `;
 
 const ItemContainer = styled.div`
   flex-grow: 1;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 `;
 const Items = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
   gap: 10px;
-  flex-wrap: wrap;
 `;
 // AboutItem 컴포넌트 만들기
 const Item = styled.li`
@@ -41,6 +42,7 @@ const Item = styled.li`
   background-color: aliceblue;
   flex-basis: 150px;
   flex-grow: 1;
+  min-height: 100px;
 `;
 
 const ProfileContainer = styled.div`
@@ -105,6 +107,8 @@ export const AboutMe = () => {
           <Items>
             <Item>1</Item>
             <Item>2</Item>
+          </Items>
+          <Items>
             <Item>3</Item>
             <Item>4</Item>
           </Items>
