@@ -2,6 +2,7 @@ import { Link } from 'react-scroll';
 import styled from 'styled-components';
 // import { ReactComponent as InstagramIcon } from 'assets/instagram.svg';
 // import { ReactComponent as FacebookIcon } from 'assets/facebook.svg';
+import { ReactComponent as UpArrow } from 'assets/double-up-arrow.svg';
 const Root = styled.div`
   padding: 70px 0 80px 0;
   position: relative;
@@ -14,14 +15,18 @@ const Root = styled.div`
 
 const TopButton = styled.button`
   position: absolute;
-  top: -20px;
+  top: -30px;
   left: 50%;
   border: none;
   transform: translate(-50%);
   width: 40px;
-  height: 43px;
+  height: 60px;
   background-color: #e31b6d;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 `;
 
 // const IconContainer = styled.div`
@@ -53,7 +58,7 @@ export const Footer = () => {
     <Root>
       <TopButton>
         <Link to="Banner" smooth duration={500}>
-          Top
+          <UpArrow width={25} height={30} fill="white" />
         </Link>
       </TopButton>
       {/* <IconContainer>
