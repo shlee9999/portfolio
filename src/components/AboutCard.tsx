@@ -6,16 +6,14 @@ const Root = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: aliceblue;
-  flex-basis: 100px;
+  /* background-color: aliceblue; */
+  flex-basis: 135px;
   flex-grow: 1;
   min-height: 200px;
 `;
 
-const CardImg = styled.div`
-  background-image: url(https://source.unsplash.com/random);
-  width: 100px;
-  height: 100px;
+const CardImg = styled.img`
+  height: 80px;
 `;
 const TypoContainer = styled.div`
   display: flex;
@@ -36,10 +34,10 @@ const Description = styled.p`
   line-height: 20px;
 `;
 
-export const AboutCard = ({ title, description }: IAboutCard) => {
+export const AboutCard = ({ title, description, imgUrl }: IAboutCard) => {
   return (
     <Root>
-      <CardImg />
+      <CardImg src={imgUrl} />
       <TypoContainer>
         <Title>{title}</Title>
         <Description>{description}</Description>

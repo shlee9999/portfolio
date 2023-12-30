@@ -6,7 +6,7 @@ import { useScrollAnimation } from 'hooks/useScrollAnimation';
 import { Title } from './Title';
 import { AboutCard } from './AboutCard';
 import { aboutCardList } from 'constants/aboutCardList';
-
+import idPhotoImg from 'assets/id_photo.jpg';
 const Root = styled.div`
   min-height: 100vh;
   padding-bottom: 30px;
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 30px;
+  gap: 100px;
   padding: 70px 10% 30px 10%;
 `;
 
@@ -43,9 +43,8 @@ const Profile = styled.div`
   align-items: center;
   padding: 20px;
 `;
-const ProfileImg = styled.div`
+const ProfileImg = styled.img`
   background-color: tomato;
-  height: 220px;
   width: 220px;
 `; // background-image 사용
 const ProfileTitle = styled.p`
@@ -102,7 +101,7 @@ export const AboutMe = () => {
         </ItemContainer>
         <ProfileContainer ref={ref}>
           <Profile>
-            <ProfileImg />
+            <ProfileImg src={idPhotoImg} />
             <ProfileTitle>Who's this guy?</ProfileTitle>
             <ProfileDescription>
               I'm a Front-End Developer for ChowNow in Los Angeles, CA. <br /> I

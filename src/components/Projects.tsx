@@ -6,15 +6,15 @@ import { projectList } from 'constants/projectList';
 
 const Root = styled(motion.div)`
   background-color: #f5f5f5;
-  padding: 50px 20% 50px 20%;
+  padding: 70px 20% 50px 20%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 100px;
 `;
 const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px;
+  gap: 30px;
 `;
 const RootVar: Variants = {
   start: {},
