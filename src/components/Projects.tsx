@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ProjectItemCard } from './ProjectItemCard';
+import { ProjectCard } from './ProjectCard';
 import { Title } from './Title';
 import { Variants, motion } from 'framer-motion';
 import { projectList } from 'constants/projectList';
@@ -31,7 +31,7 @@ export const Projects = () => {
       <Title>Projects</Title>
       <Cards>
         {projectList.map((project, index) => (
-          <ProjectItemCard {...project} isEven={index % 2 == 1} />
+          <ProjectCard {...project} isEven={index % 2 == 1} />
         ))}
       </Cards>
     </Root>

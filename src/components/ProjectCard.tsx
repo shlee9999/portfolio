@@ -114,16 +114,16 @@ const ButtonVar: Variants = {
   },
   end: { y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
-interface ProjectItemCardProps extends IProject {
+interface ProjectCardProps extends IProject {
   isEven?: boolean;
 }
 
-export const ProjectItemCard = ({
+export const ProjectCard = ({
   isEven,
   imgUrl,
   title,
   techStacks,
-}: ProjectItemCardProps) => {
+}: ProjectCardProps) => {
   const { ref, isVisible } = useScrollAnimation();
   const [isHovered, setIsHovered] = useState(false);
 
