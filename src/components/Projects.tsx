@@ -3,9 +3,8 @@ import { ProjectItemCard } from './ProjectItemCard';
 import { Title } from './Title';
 
 const Root = styled.div`
-  height: 100vh;
   background-color: teal;
-  padding: 30px 20% 0 20%;
+  padding: 30px 20% 30px 20%;
   display: flex;
   flex-direction: column;
   gap: 30px;

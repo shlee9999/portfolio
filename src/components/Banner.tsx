@@ -6,12 +6,12 @@ const Root = styled.div`
   height: 100vh;
   padding: 30px 0 30px 0;
   width: 100%;
-
   background-image: url(${bannerImg});
   background-size: cover;
   background-attachment: fixed;
   background-position-x: 50%;
   background-position-y: -50px;
+  background-repeat: no-repeat;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
