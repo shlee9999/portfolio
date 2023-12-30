@@ -6,6 +6,7 @@ import { AboutMe } from 'components/AboutMe';
 import { Projects } from 'components/Projects';
 import { Header } from 'components/Header';
 import { Contact } from 'components/Contact';
+import { Footer } from 'components/Footer';
 
 const Root = styled(motion.div)`
   position: relative;
@@ -32,6 +33,7 @@ function App() {
       <AboutMe />
       <Projects />
       <Contact />
+      <Footer />
     </Root>
   );
 }
