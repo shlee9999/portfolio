@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import { HEADER_HEIGHT } from '../constants/layout';
+import { Link } from 'react-scroll';
+import { ReactScrollLinkProps } from 'react-scroll/modules/components/Link';
 
 const Root = styled.header`
   padding-top: 10px 0 5px 0;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 40%;
   height: ${HEADER_HEIGHT}px;
@@ -20,7 +22,16 @@ const Items = styled.ul`
   grid-template-columns: repeat(5, 1fr);
   text-align: center;
 `;
-const Item = styled.li`
+
+const CommonLinkProps: Omit<ReactScrollLinkProps, 'to'> = {
+  smooth: true,
+  duration: 750,
+  spy: true,
+  activeStyle: { opacity: 1 },
+};
+
+const LinkIdList = ['Banner', 'AboutMe', 'Projects', 'Fourth', 'Fifth'];
+const StyledLink = styled(Link)`
   place-self: center;
   opacity: 0.6;
   cursor: pointer;
@@ -28,16 +39,15 @@ const Item = styled.li`
     opacity: 1;
   }
 `;
-
 export const Header = () => {
   return (
-    <Root id="AboutMe">
+    <Root>
       <Items>
-        <Item>First</Item>
-        <Item>Second</Item>
-        <Item>Third</Item>
-        <Item>Fourth</Item>
-        <Item>Fifth</Item>
+        {LinkIdList.map((id: string) => (
+          <StyledLink to={id} {...CommonLinkProps}>
+            {id}
+          </StyledLink>
+        ))}
       </Items>
     </Root>
   );

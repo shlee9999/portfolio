@@ -93,8 +93,7 @@ export const AboutMe = () => {
     },
   };
   return (
-    <Root>
-      <Header />
+    <Root id="AboutMe">
       <Wrapper>
         <Title>About</Title>
         <ItemContainer>

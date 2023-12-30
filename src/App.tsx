@@ -4,8 +4,10 @@ import { Banner } from './components/Banner';
 import { Variants, motion } from 'framer-motion';
 import { AboutMe } from 'components/AboutMe';
 import { Projects } from 'components/Projects';
+import { Header } from 'components/Header';
 
-const Root = styled(motion.div)`\
+const Root = styled(motion.div)`
+  position: relative;
 `;
 const RootVariant: Variants = {
   start: {
@@ -23,6 +25,7 @@ const RootVariant: Variants = {
 function App() {
   return (
     <Root variants={RootVariant} initial="start" animate="end">
+      <Header />
       <Banner />
       <AboutMe />
       <Projects />

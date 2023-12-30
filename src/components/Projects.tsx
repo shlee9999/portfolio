@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { ProjectItemCard } from './ProjectItemCard';
 import { Title } from './Title';
-import { useScrollAnimation } from 'hooks/useScrollAnimation';
 import { Variants, motion } from 'framer-motion';
 
 const Root = styled(motion.div)`
+  min-height: 100vh;
   background-color: teal;
   padding: 30px 20% 30px 20%;
   display: flex;

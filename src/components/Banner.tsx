@@ -45,7 +45,7 @@ const BtnVariant: Variants = {
 };
 export const Banner = () => {
   return (
-    <Root>
+    <Root id="Banner">
       <Title>SeongHoon's PortFolio</Title>
       <Button variants={BtnVariant} whileTap="click" whileHover="hover">
         <Link to="AboutMe" smooth duration={750}>
