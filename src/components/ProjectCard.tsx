@@ -23,7 +23,7 @@ const Root = styled(motion.div)<RootProps>`
 const TriggeredRoot = styled(motion.div)`
   width: 100%;
   height: 100%;
-  background-color: #eeeeee;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
