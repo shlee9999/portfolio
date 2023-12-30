@@ -37,6 +37,7 @@ const CommonLinkProps: Omit<ReactScrollLinkProps, 'to'> = {
   duration: 750,
   spy: true,
   activeStyle: { opacity: 1 },
+  offset: -50,
 };
 
 const LinkIdList = ['About', 'Projects', 'Contact', 'Fifth'];

@@ -8,26 +8,13 @@ import { Header } from 'components/Header';
 import { Contact } from 'components/Contact';
 import { Footer } from 'components/Footer';
 
-const Root = styled(motion.div)`
+const Root = styled.div`
   position: relative;
   overflow-x: hidden;
 `;
-const RootVariant: Variants = {
-  start: {
-    opacity: 0,
-    y: 20,
-  },
-  end: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-    },
-  },
-};
 function App() {
   return (
-    <Root variants={RootVariant} initial="start" animate="end">
+    <Root>
       <Header />
       <Banner />
       <AboutMe />
