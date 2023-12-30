@@ -4,7 +4,6 @@ import { Title } from './Title';
 import { Variants, motion } from 'framer-motion';
 
 const Root = styled(motion.div)`
-  min-height: 100vh;
   background-color: #00a1a7;
   padding: 30px 20% 30px 20%;
   display: flex;
@@ -13,7 +12,7 @@ const Root = styled(motion.div)`
 `;
 const Cards = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
 `;
 const RootVar: Variants = {

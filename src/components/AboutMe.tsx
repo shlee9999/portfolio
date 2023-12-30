@@ -5,6 +5,8 @@ import { TechItem } from './TechItem';
 import { Variants, motion } from 'framer-motion';
 import { useScrollAnimation } from 'hooks/useScrollAnimation';
 import { Title } from './Title';
+import { AboutCard } from './AboutCard';
+import { aboutCardList } from 'constants/aboutCardList';
 
 const Root = styled.div`
   min-height: 100vh;
@@ -30,15 +32,7 @@ const Items = styled.div`
   gap: 10px;
 `;
 // AboutItem 컴포넌트 만들기
-const Item = styled.li`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: aliceblue;
-  flex-basis: 100px;
-  flex-grow: 1;
-  min-height: 100px;
-`;
+const Item = styled.li``;
 
 const ProfileContainer = styled.div`
   display: grid;
@@ -98,12 +92,12 @@ export const AboutMe = () => {
         <Title>About</Title>
         <ItemContainer>
           <Items>
-            <Item>1</Item>
-            <Item>2</Item>
+            <AboutCard {...aboutCardList[0]} />
+            <AboutCard {...aboutCardList[1]} />
           </Items>
           <Items>
-            <Item>3</Item>
-            <Item>4</Item>
+            <AboutCard {...aboutCardList[2]} />
+            <AboutCard {...aboutCardList[3]} />
           </Items>
         </ItemContainer>
         <ProfileContainer ref={ref}>
