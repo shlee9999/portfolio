@@ -5,7 +5,7 @@ export interface ITechList {
 export const techList: ITechList[] = [
   {
     tech: 'css',
-    percentage: 80,
+    percentage: 90,
   },
   {
     tech: 'HTML',
@@ -17,10 +17,14 @@ export const techList: ITechList[] = [
   },
   {
     tech: 'typescript',
-    percentage: 80,
+    percentage: 90,
   },
   {
     tech: 'react',
     percentage: 80,
+  },
+  {
+    tech: 'Python',
+    percentage: 70,
   },
 ];

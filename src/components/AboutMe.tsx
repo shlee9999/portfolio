@@ -3,6 +3,9 @@ import { Header } from './Header';
 import { techList } from 'constants/techList';
 import { Title } from './Title';
 import { HEADER_HEIGHT } from 'constants/layout';
+import { TechItem } from './TechItem';
+import { Variants, motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
 const Root = styled.div`
   height: 100vh;
@@ -68,11 +71,47 @@ const ProfileDescription = styled.p`
   text-align: center;
   font-size: 12px;
 `;
-const TechStackContainer = styled.div`
+const TechStackContainer = styled(motion.div)`
+  padding: 20px 30px;
   background-color: tomato;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
-
+const TechStackContainerVar: Variants = {
+  start: {
+    opacity: 0,
+    x: 200,
+  },
+  end: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1.3,
+      delayChildren: 0.5,
+      staggerChildren: 0.1,
+    },
+  },
+};
 export const AboutMe = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+  const onScroll = (entries: any) => {
+    const [entry] = entries;
+    setIsVisible(entry.isIntersecting);
+  };
+  console.log('About me', isVisible);
+  useEffect(() => {
+    const observer = new IntersectionObserver(onScroll, { threshold: 0.5 });
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [ref]);
   return (
     <Root>
       <Header />
@@ -86,7 +125,7 @@ export const AboutMe = () => {
             <Item>4</Item>
           </Items>
         </ItemContainer>
-        <ProfileContainer>
+        <ProfileContainer ref={ref}>
           <Profile>
             <ProfileImg />
             <ProfileTitle>Who's this guy?</ProfileTitle>
@@ -98,13 +137,14 @@ export const AboutMe = () => {
               dynamic user experiences. Let's make something special.
             </ProfileDescription>
           </Profile>
-          <TechStackContainer>
+          <TechStackContainer
+            variants={TechStackContainerVar}
+            initial="start"
+            animate={isVisible ? 'end' : 'start'}
+          >
             {/* 애니메이션 넣어보기 */}
             {techList.map(techInfo => (
-              <div>
-                {techInfo.tech}
-                {techInfo.percentage}%
-              </div>
+              <TechItem {...techInfo} />
             ))}
           </TechStackContainer>
         </ProfileContainer>
