@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { ProjectItemCard } from './ProjectItemCard';
 import { Title } from './Title';
+import { useScrollAnimation } from 'hooks/useScrollAnimation';
+import { Variants, motion } from 'framer-motion';
 
-const Root = styled.div`
+const Root = styled(motion.div)`
   background-color: teal;
   padding: 30px 20% 30px 20%;
   display: flex;
@@ -14,20 +16,25 @@ const Cards = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 10px;
 `;
-
+const RootVar: Variants = {
+  start: {},
+  end: {
+    transition: {
+      delayChildren: 0.2,
+    },
+  },
+};
 export const Projects = () => {
   return (
-    <Root id="Projects">
+    <Root variants={RootVar} id="Projects">
       <Title>Projects</Title>
       <Cards>
         <ProjectItemCard />
+        <ProjectItemCard isEven />
         <ProjectItemCard />
+        <ProjectItemCard isEven />
         <ProjectItemCard />
-        <ProjectItemCard />
-        <ProjectItemCard />
-        <ProjectItemCard />
-        <ProjectItemCard />
-        <ProjectItemCard />
+        <ProjectItemCard isEven />
       </Cards>
     </Root>
   );
