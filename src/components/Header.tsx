@@ -4,6 +4,9 @@ import { Link } from 'react-scroll';
 import { ReactScrollLinkProps } from 'react-scroll/modules/components/Link';
 
 const Root = styled.header`
+  @media (max-width: 768px) {
+    display: none;
+  }
   padding-top: 10px 0 5px 0;
   position: sticky;
   top: 0px;
