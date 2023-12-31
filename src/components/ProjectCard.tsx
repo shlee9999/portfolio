@@ -1,8 +1,10 @@
 import { IProject } from 'constants/projectList';
 import { Variants, motion } from 'framer-motion';
 import { useScrollAnimation } from 'hooks/useScrollAnimation';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { ProjectModal } from './ProjectModal';
+import { Button } from './common/Button';
 
 interface RootProps {
   imgUrl: string;
@@ -67,23 +69,7 @@ const Title = styled.p`
   font-size: 40px;
   font-weight: 800;
 `;
-const Button = styled(motion.p)`
-  width: 60%;
-  height: 50px;
-  border: 1px solid #e31b6d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &:hover {
-    background-color: #e31b6d;
-    color: #eeeeee;
-  }
-  transition-property: background-color, color;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-  text-transform: uppercase;
-  font-size: 25px;
-`;
+
 const TechStack = styled.span`
   color: #e31b6d;
   text-align: center;
@@ -95,6 +81,15 @@ const TechStack = styled.span`
 const TechStacks = styled.div`
   text-align: center;
 `;
+const ButtonWrapper = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 50px;
+`;
+const LearnButton = styled(Button)``;
+
 const TriggeredRootVar: Variants = {
   start: {
     opacity: 0,
@@ -118,6 +113,7 @@ const ButtonVar: Variants = {
   },
   end: { y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
+
 interface ProjectCardProps extends IProject {
   isEven?: boolean;
 }
@@ -130,6 +126,13 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   const { ref, isVisible } = useScrollAnimation();
   const [isHovered, setIsHovered] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <Root
@@ -155,8 +158,11 @@ export const ProjectCard = ({
             ))}
           </TechStacks>
         </Container>
-        <Button variants={ButtonVar}>Learn More</Button>
+        <ButtonWrapper variants={ButtonVar}>
+          <LearnButton onClick={openModal}>Learn More</LearnButton>
+        </ButtonWrapper>
       </TriggeredRoot>
+      <ProjectModal isModalOpen={isModalOpen} closeModal={closeModal} />
     </Root>
   );
 };

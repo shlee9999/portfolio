@@ -3,7 +3,7 @@ import { techList } from 'constants/techList';
 import { TechItem } from './TechItem';
 import { Variants, motion } from 'framer-motion';
 import { useScrollAnimation } from 'hooks/useScrollAnimation';
-import { Title } from './Title';
+import { Title } from './common/Title';
 import { AboutCard } from './AboutCard';
 import { aboutCardList } from 'constants/aboutCardList';
 import idPhotoImg from 'assets/id_photo.jpg';

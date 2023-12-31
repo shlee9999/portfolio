@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Title } from './Title';
+import { Title } from './common/Title';
 import { useForm } from 'react-hook-form';
 import { Variants, motion } from 'framer-motion';
 import { useScrollAnimation } from 'hooks/useScrollAnimation';

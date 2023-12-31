@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { HEADER_HEIGHT } from '../constants/layout';
+import { HEADER_HEIGHT, MOBILE_VIEWPORT_SIZE } from '../constants/layout';
 import { Link } from 'react-scroll';
 import { ReactScrollLinkProps } from 'react-scroll/modules/components/Link';
 
 const Root = styled.header`
-  @media (max-width: 768px) {
+  @media (max-width: ${MOBILE_VIEWPORT_SIZE}px) {
     display: none;
   }
   position: fixed;

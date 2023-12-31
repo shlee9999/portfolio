@@ -1,6 +1,6 @@
 import { Variants, motion } from 'framer-motion';
 import { useScrollAnimation } from 'hooks/useScrollAnimation';
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 
 const Root = styled(motion.div)`

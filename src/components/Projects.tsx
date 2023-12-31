@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ProjectCard } from './ProjectCard';
-import { Title } from './Title';
+import { Title } from './common/Title';
 import { Variants, motion } from 'framer-motion';
 import { projectList } from 'constants/projectList';
 

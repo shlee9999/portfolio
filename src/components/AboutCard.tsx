@@ -51,6 +51,7 @@ const RootVar: Variants = {
 };
 export const AboutCard = ({ title, description, imgUrl }: IAboutCard) => {
   const { ref, isVisible } = useScrollAnimation(0.2);
+
   return (
     <Root
       variants={RootVar}
