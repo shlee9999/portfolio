@@ -11,23 +11,22 @@ export const aboutCardList: IAboutCard[] = [
   {
     title: 'Fast',
     description:
-      'Fast load times and lag free interaction, my highest priority.',
+      '빠른 로딩 시간과 지연 없는 상호 작용은 제가 가장 중요하게 생각하는 부분입니다.',
     imgUrl: fastImg,
   },
   {
     title: 'Responsive',
-    description: 'My layouts will work on any device, big or small.',
+    description: '제 레이아웃은 모든 기기에서 크기에 관계 없이 작동합니다.',
     imgUrl: responsiveImg,
   },
   {
     title: 'Intuitive',
-    description: 'Strong preference for easy to use, intuitive UX/UI.',
+    description: '사용하기 쉽고 직관적인 UX/UI를 선호합니다.',
     imgUrl: intuitiveImg,
   },
   {
     title: 'Dynamic',
-    description:
-      "Websites don't have to be static, I love making pages come to life.",
+    description: '페이지에 생동감을 불어넣는 것을 좋아합니다.',
     imgUrl: dynamicImg,
   },
 ];
