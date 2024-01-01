@@ -31,7 +31,7 @@ export const Projects = () => {
       <Title>Projects</Title>
       <Cards>
         {projectList.map((project, index) => (
-          <ProjectCard {...project} index={index} />
+          <ProjectCard key={index} {...project} index={index} />
         ))}
       </Cards>
     </Root>

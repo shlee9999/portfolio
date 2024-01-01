@@ -116,8 +116,8 @@ export const AboutMe = () => {
             initial="start"
             animate={isVisible ? 'end' : 'start'}
           >
-            {techList.map(techInfo => (
-              <TechItem {...techInfo} />
+            {techList.map((techInfo, index) => (
+              <TechItem key={index} {...techInfo} />
             ))}
           </TechStackContainer>
         </ProfileContainer>

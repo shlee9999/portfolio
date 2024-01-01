@@ -60,8 +60,8 @@ export const Header = () => {
       </StyledLink>
       <NavBar>
         <Items>
-          {LinkIdList.map((id: string) => (
-            <StyledLink to={id} {...CommonLinkProps}>
+          {LinkIdList.map((id: string, index) => (
+            <StyledLink key={index} to={id} {...CommonLinkProps}>
               {id}
             </StyledLink>
           ))}

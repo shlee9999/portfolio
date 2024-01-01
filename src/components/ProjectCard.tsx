@@ -5,15 +5,16 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ProjectModal } from './ProjectModal';
 import { Button } from './common/Button';
+import { TechStacks } from './common/TechStacks';
 
 interface RootProps {
-  imgUrl: string;
+  $imgUrl: string;
 }
 const Root = styled(motion.div)<RootProps>`
   height: 300px;
   background-color: white;
   border-radius: 10px;
-  background-image: url(${props => props.imgUrl});
+  background-image: url(${props => props.$imgUrl});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -70,17 +71,6 @@ const Title = styled.p`
   font-weight: 800;
 `;
 
-const TechStack = styled.span`
-  color: #e31b6d;
-  text-align: center;
-  font-size: 20px;
-  &:not(:last-child)::after {
-    content: '/';
-  }
-`;
-const TechStacks = styled.div`
-  text-align: center;
-`;
 const ButtonWrapper = styled(motion.div)`
   display: flex;
   align-items: center;
@@ -88,7 +78,10 @@ const ButtonWrapper = styled(motion.div)`
   width: 60%;
   height: 50px;
 `;
-const LearnButton = styled(Button)``;
+const LearnButton = styled(Button)`
+  width: 100%;
+  height: 100%;
+`;
 
 const TriggeredRootVar: Variants = {
   start: {
@@ -119,7 +112,7 @@ interface ProjectCardProps extends IProject {
 }
 
 export const ProjectCard = ({
-  imgUrlList: imgUrl,
+  imgUrlList,
   title,
   techStacks,
   index,
@@ -137,7 +130,7 @@ export const ProjectCard = ({
 
   return (
     <Root
-      imgUrl={imgUrl[0]}
+      $imgUrl={imgUrlList[0]}
       ref={ref}
       variants={isEven ? EvenRootVar : OddRootVar}
       initial="start"
@@ -153,11 +146,7 @@ export const ProjectCard = ({
       >
         <Container variants={ContainerVar}>
           <Title>{title}</Title>
-          <TechStacks>
-            {techStacks.map(techStack => (
-              <TechStack>{techStack}</TechStack>
-            ))}
-          </TechStacks>
+          <TechStacks techStacks={techStacks} />
         </Container>
         <ButtonWrapper variants={ButtonVar}>
           <LearnButton onClick={openModal}>Learn More</LearnButton>
