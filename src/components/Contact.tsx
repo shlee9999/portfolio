@@ -23,6 +23,7 @@ const Form = styled(motion.form)`
   flex-direction: column;
   width: 50%;
   gap: 5px;
+  min-width: 300px;
 `;
 const Input = styled.input`
   border: none;

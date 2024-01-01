@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import bannerImg from 'assets/banner.jpg';
 import { motion, Variants } from 'framer-motion';
 import { Link } from 'react-scroll';
+import { MOBILE_VIEWPORT_SIZE } from 'constants/layout';
 const Root = styled.div`
   position: relative;
-  height: 70vh;
+  min-height: 70vh;
   padding: 30px 0 50px 0;
   width: 100%;
   background-image: url(${bannerImg});
@@ -61,7 +62,7 @@ const Description = styled.p`
   opacity: 0.7;
 `;
 const Button = styled(motion.button)`
-  position: absolute;
+  margin-top: 50px;
   color: white;
   z-index: 2;
   width: 150px;
@@ -73,7 +74,13 @@ const Button = styled(motion.button)`
   font-size: 15px;
   font-weight: 800;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.6);
-  bottom: 70px;
+  @media (max-width: 150px) {
+    width: auto; /* 너비를 자동으로 조정 */
+    height: auto;
+    padding: 10px; /* 버튼 내부 여백 */
+    white-space: normal; /* 줄바꿈 허용 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+  }
 `;
 
 const BtnVariant: Variants = {
