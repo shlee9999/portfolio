@@ -115,14 +115,14 @@ const ButtonVar: Variants = {
 };
 
 interface ProjectCardProps extends IProject {
-  isEven?: boolean;
+  index: number;
 }
 
 export const ProjectCard = ({
-  isEven,
-  imgUrl,
+  imgUrlList: imgUrl,
   title,
   techStacks,
+  index,
 }: ProjectCardProps) => {
   const { ref, isVisible } = useScrollAnimation();
   const [isHovered, setIsHovered] = useState(false);
@@ -133,10 +133,11 @@ export const ProjectCard = ({
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  const isEven = index % 2 === 1;
 
   return (
     <Root
-      imgUrl={imgUrl}
+      imgUrl={imgUrl[0]}
       ref={ref}
       variants={isEven ? EvenRootVar : OddRootVar}
       initial="start"
@@ -162,7 +163,11 @@ export const ProjectCard = ({
           <LearnButton onClick={openModal}>Learn More</LearnButton>
         </ButtonWrapper>
       </TriggeredRoot>
-      <ProjectModal isModalOpen={isModalOpen} closeModal={closeModal} />
+      <ProjectModal
+        isModalOpen={isModalOpen}
+        closeModal={closeModal}
+        index={index}
+      />
     </Root>
   );
 };

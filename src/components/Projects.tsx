@@ -31,7 +31,7 @@ export const Projects = () => {
       <Title>Projects</Title>
       <Cards>
         {projectList.map((project, index) => (
-          <ProjectCard {...project} isEven={index % 2 == 1} />
+          <ProjectCard {...project} index={index} />
         ))}
       </Cards>
     </Root>

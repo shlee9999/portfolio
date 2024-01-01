@@ -1,38 +1,48 @@
-import typingProImg from 'assets/typing_pro.png';
-import planmateImg from 'assets/planmate.png';
+import typingPro from 'assets/projects/typing_pro/typing_pro.png';
+import typingProMain from 'assets/projects/typing_pro/main.png';
+import typingProCategoryModal from 'assets/projects/typing_pro/category_modal.png';
+import typingProShower from 'assets/projects/typing_pro/shower.png';
+import typingProShowerInGame from 'assets/projects/typing_pro/shower_in_game.png';
+import planmate from 'assets/projects/planmate/planmate.png';
 export interface IProject {
-  imgUrl: string;
+  imgUrlList: string[];
   title: string;
   techStacks: string[];
 }
 export const projectList: IProject[] = [
   {
-    imgUrl: typingProImg,
+    imgUrlList: [
+      typingPro,
+      typingProMain,
+      typingProCategoryModal,
+      typingProShower,
+      typingProShowerInGame,
+    ],
     title: 'TypingPro',
-    techStacks: ['Javascript', 'ReactJS'],
+    techStacks: ['Javascript', 'React'],
   },
   {
-    imgUrl: planmateImg,
+    imgUrlList: [planmate],
     title: 'PlanMate',
-    techStacks: ['Typescript', 'ReactJS', 'Redux'],
+    techStacks: ['Typescript', 'React', 'Redux'],
   },
   {
-    imgUrl: 'https://source.unsplash.com/random',
+    imgUrlList: ['https://source.unsplash.com/random'],
     title: 'Random',
     techStacks: [],
   },
   {
-    imgUrl: 'https://source.unsplash.com/random',
+    imgUrlList: ['https://source.unsplash.com/random'],
     title: 'Random',
     techStacks: [],
   },
   {
-    imgUrl: 'https://source.unsplash.com/random',
+    imgUrlList: ['https://source.unsplash.com/random'],
     title: 'Random',
     techStacks: [],
   },
   {
-    imgUrl: 'https://source.unsplash.com/random',
+    imgUrlList: ['https://source.unsplash.com/random'],
     title: 'Random',
     techStacks: [],
   },
