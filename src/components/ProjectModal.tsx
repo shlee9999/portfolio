@@ -48,6 +48,9 @@ const TypoContainer = styled.div`
   position: relative;
   padding: 20px;
   height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const Title = styled.p`
